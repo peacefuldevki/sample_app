@@ -1,0 +1,17 @@
+
+<div class = "useruser">
+  <div><%= link_to image_tag("user.jpg") %></div>
+<div class = "user">
+  <div><%=@user.name %></div>
+  <div> <%=@user.email %></div>
+</div>
+</div>
+  <div class="col-md-8">
+    <% if @user.microposts.any? %>  
+      <h3>Microposts (<%= @user.microposts.count %>)</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= will_paginate @microposts %>
+    <% end %>
+  </div>
